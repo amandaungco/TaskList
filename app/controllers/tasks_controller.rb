@@ -5,14 +5,12 @@ TASKS = [
 
 class TasksController < ApplicationController
   def index
-    @tasks= TASKS
+    @tasks= Task.all
   end
 
   def show
-    @id = params[:id]
-    @task = TASKS.find do |task|
-      task[:id] == @id.to_i
-    end
+    id = params[:id]
+    @task = Task.find_by(id:id)
   end
 
 end
