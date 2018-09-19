@@ -1,0 +1,14 @@
+books/new
+<%= form_with model: @task, class: "task-form" do |f|%>
+<p> Please provide the following information to save your task to our database: </p>
+  <%= f.label :name , "Name:"%>
+  <%= f.text_field :name, class: "tasks"%>
+  <br>
+  <%= f.label :description, "Description:"%>
+  <%= f.text_field :description, class: "tasks"%>
+  <br>
+  <%= f.label :completion_date, "Completion Date:"%>
+  <%= f.text_field :completion_date, class: "tasks"%>
+  <br>
+  <%= f.submit "Save Task", class: "task-button"%>
+<%end%>

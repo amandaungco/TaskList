@@ -11,16 +11,17 @@
 
   <body>
     <header>
-      <h1> Welcome to Ada Books</h1>
+      <h1> Task List</h1>
       <nav>
         <ul>
           <li>
-            <a href="/"> Home</a>
+            <%= link_to "Home", "/", id: "home-link" %>
+            <!-- <a href="/"> Home</a> -->
           </li>
           <li>
-            <a href="/tasks"> Task List</a>
+            <%= link_to "Task List", "/tasks" %>
           </li>
-        
+
     <%= yield %>
   </body>
 </html>

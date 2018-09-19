@@ -2,10 +2,11 @@
   <h1><%= "404: NOT FOUND" %></h1>
 <% else %>
   <h1> <%= @task.name %></h1>
-  <p>
-    Due Date: <%= @task.completion_date%>
-  </p>
-  <p>
-  Description: <%= @task.description %>
-  </p>
+  <p>Due Date: <%= @task.completion_date%></p>
+  <p>Description: <%= @task.description %></p>
+  <a href=<%"tasks/#{@task.id}/edit"%>>
+    Edit
+  </a>
+  <div></div>
+  <%= link_to "Delete #{@task.name}", task_path(@task.id), method: :delete %>
 <% end %>
