@@ -1,13 +1,28 @@
 <h1> Tasks List </h1>
 <% @tasks.each do |task| %>
+if complete
+<h2 class="class"> has class
+else not complete
+(another container here without class)
+h2 doesnt have class
   <h2>
+end
     <a href= "/tasks/<%=task.id %>">
         <%= task[:name] %>
+      </a>
   </h2>
-  <p>
-    <%= task[:name] %>: <%= task[:description] %>
-  </p>
-  <p>
-    DUE DATE: <%= task[:completion_date] %>
-  </p>
+  <ul>
+    <li>Description: <%= task[:description] %></li>
+    <li>DUE DATE: <%= task[:completion_date] %></li>
+    <li> Status: <%= task[:status]%></li>
+
+    <li><% if task[:status].class == String%>
+          <%= link_to "Mark as Incomplete", task_status_path(task.id), method: :patch, class: "complete"%>
+        <% else task[:status].class == nil%>
+          <%= link_to "Mark as Complete", task_status_path(task.id), method: :patch %>
+        <%end%>
+      </li>
+    <li><%= link_to "Edit", edit_task_path(task.id)%></li>
+    <li><%= link_to "Delete", delete_task_path(task.id)%></li>
+  </ul>
 <% end %>

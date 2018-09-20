@@ -4,9 +4,10 @@
   <h1> <%= @task.name %></h1>
   <p>Due Date: <%= @task.completion_date%></p>
   <p>Description: <%= @task.description %></p>
-  <a href=<%"tasks/#{@task.id}/edit"%>>
-    Edit
-  </a>
+
   <div></div>
-  <%= link_to "Delete #{@task.name}", task_path(@task.id), method: :delete %>
+
+  <%= link_to "Mark as Complete", task_status_path(@task.id), method: :patch %>
+  <%= link_to "Edit", edit_task_path(@task.id)%>
+  <%= link_to "Delete #{@task.name}?", task_path(@task.id), method: :delete, data: {confirm:"Are you sure you want to delete?"} %>
 <% end %>
