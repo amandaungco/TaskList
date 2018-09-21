@@ -1,3 +1,6 @@
+body {
+  padding: 0px 80px
+}
 .complete {
   text-decoration: line-through;
   grid-column: col 3 / span 2;
@@ -28,6 +31,7 @@
     font-family: georgia;
     border-radius: 10px;
     padding: 20px;
+    padding-left: 40px;
     font-size: 1rem;
 }
 
@@ -35,4 +39,19 @@
   display: flex;
   list-style: none;
   justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  direction: row;
+  list-style: none;
+  padding: 0px;
+}
+
+.menu li {
+  padding-right: 30px;
+}
+
+.done {
+  align-self: flex-end;
 }
