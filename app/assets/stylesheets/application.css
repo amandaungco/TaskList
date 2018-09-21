@@ -1,4 +1,38 @@
 .complete {
   text-decoration: line-through;
-  float: right;
+  grid-column: col 3 / span 2;
+  display: inline-block;
+  background-color: lightblue;
+  color: purple;
+  font-family: georgia;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 1rem;
+
+}
+.wrapper {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(4, [col] 150px ) ;
+    grid-template-rows: repeat(2, [row] auto  );
+    background-color: #fff;
+    color: #444;
+}
+
+.pending {
+    grid-column: col / span 2;
+    background-color: lightblue;
+    border-color: navy;
+    border-width: thick;
+    color: purple;
+    font-family: georgia;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+.options {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
 }

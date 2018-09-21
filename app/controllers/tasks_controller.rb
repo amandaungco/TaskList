@@ -39,7 +39,7 @@ class TasksController < ApplicationController
 
   def destroy
     id = params[:id]
-    @task = Task.find_by(id:id)
+    @task = Task.find_by(id:params[:id].to_i)
     @task.destroy
       redirect_to root_path
   end
