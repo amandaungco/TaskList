@@ -1,5 +1,5 @@
 <%= form_with model: @task, class: "task-form" do |f|%>
-<h1><%= action_name%><h1>
+<h1><%= action_name %><h1>
 <p> Please provide the following information to save your task to our database: </p>
   <%= f.label :name , "Name:"%>
   <%= f.text_field :name, class: "tasks"%>
